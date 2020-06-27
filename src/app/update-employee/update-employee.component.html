@@ -1,0 +1,64 @@
+<div class="card-container">
+  <mat-card class="card">
+    <div class="edit-form">
+      <form>
+        <table>
+          <tr><h3>Update Employee</h3></tr>
+          <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Employee Age</th>
+            <th>Profile Image</th>
+          </tr>
+          <tr *ngFor="let currentEmployee of employees">
+            <td><input
+              type="text" 
+              class="form-control"
+              id="id"
+              [(ngModel)]="employees.id"
+              name="id"
+            /></td>
+            <td><input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="employees.employee_name"
+              name="name"
+            /></td>
+            <td><input
+              type="text"
+              class="form-control"
+              id="salary"
+              [(ngModel)]="employees.employee_salary"
+              name="salary"
+            /></td>
+            <td> <input
+              type="text"
+              class="form-control"
+              id="age"
+              [(ngModel)]="employees.employee_age"
+              name="age"
+            /></td>
+            <td><input
+              type="text"
+              class="form-control"
+              id="image"
+              [(ngModel)]="employees.profile_image"
+              name="id"
+            /></td>
+          </tr>
+        </table>
+      </form>
+    
+      <button class="badge badge-danger mr-2" (click)="deleteEmployee()">
+        Delete
+      </button>
+    
+      <button type="submit" class="badge badge-success" (click)="update()">
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  </mat-card>
+</div>

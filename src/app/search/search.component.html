@@ -1,0 +1,22 @@
+<div class="main"></div>
+<div class="card-container">
+    <mat-card class="card">
+        <table>
+            <tr>
+                <h2>Search Employee</h2>
+            </tr>
+            <tr class="md-form active-cyan active-cyan-2 mb-3">
+                <label for="search">Enter Employee Id: </label>
+                <input type="text" id="search" [(ngModel)]="employees.id" #search  name="search">
+                <button type="submit" (click)="getEmployee()">Search</button>
+            </tr> 
+            <tr *ngFor="let data of data">
+                <td>{{ data.id }}</td>
+                <td>{{ data.employee_name }}</td>
+                <td>{{ data.employee_salary }}</td>
+                <td>{{ data.employee_age }}</td>
+                <td>{{ data.profile_image}}</td>
+            </tr>
+        </table>
+    </mat-card>
+</div>
